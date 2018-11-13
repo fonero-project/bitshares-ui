@@ -251,10 +251,10 @@ class MarketHistory extends React.Component {
             </tr>
         );
 
-        let historyRowsLength = historyRows.length;
+        let historyRowsLength = (historyRows !== null) ? historyRows.length : 0;
 
-        if (!showAll) {
-            historyRows.splice(rowCount, historyRows.length);
+        if (historyRowsLength > 0 && !showAll) {
+            historyRows.splice(rowCount, historyRowsLength);
         }
 
         return (
